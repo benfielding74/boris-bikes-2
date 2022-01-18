@@ -4,7 +4,9 @@ describe DockingStation do
   #Arrange
     docking_station = DockingStation.new
   #Act
-    expect(docking_station.release_bike).to eq "Bike Released"
+    # expect(docking_station.release_bike).to eq "Bike Released"
+    # docking_station.respond_to?release_bike
+    respond_to?(docking_station.release_bike) 
   #Assert
   end
 end
