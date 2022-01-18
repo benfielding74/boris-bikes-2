@@ -1,11 +1,11 @@
-require '.Lib/DockingStation.rb'
+require './DockingStation.rb'
 describe DockingStation do 
   it 'stores and releases bikes' do 
   #Arrange
-  docking_station = DockingStation
+    docking_station = DockingStation.new
   #Act
-  docking_station.respond_to.release_bike
+    expect(docking_station.release_bike).to eq
   #Assert
 
-end
+  end
 end
