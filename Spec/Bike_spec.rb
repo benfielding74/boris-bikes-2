@@ -6,7 +6,7 @@ describe Bike do
   #Act
     # expect(docking_station.release_bike).to eq "Bike Released"
     # docking_station.respond_to?release_bike
-    # respond_to?(docking_station.release_bike) 
+    respond_to?(my_bike.working?) 
   #Assert
   end
 end

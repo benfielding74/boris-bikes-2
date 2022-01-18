@@ -1,13 +1,19 @@
 class DockingStation
+   # $bike = 0
   def release_bike
-    # return "Bike released"
-    $bike += 1
-  end
+    return "Bike released"
+    # bike = Bike.new
+    #$bike += 1
+    end
 end
 
 class Bike
   def initialize
-    working_bike += 1
+    @working = "Yes"
+  end
+
+  def working?
+    return @working
   end
 end
 
@@ -15,4 +21,8 @@ end
 # docking_station
 # docking_station.release_bike
 # puts $bike
-# p $bike.working
+# bike.working?
+
+# my_bike = Bike.new
+# p my_bike
+# p my_bike.working?

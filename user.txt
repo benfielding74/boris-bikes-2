@@ -1,0 +1,5 @@
+docking station (has 1 bike)
+release bike
+  is the bike working?
+  if bike working then docking station (has 0 bike)
+
