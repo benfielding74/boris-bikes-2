@@ -17,26 +17,24 @@ describe DockingStation do
   end
 
   it "Allows us to dock a bike" do
-    docking_station = DockingStation.new(1)
+    docking_station = DockingStation.new
     bike = docking_station.release_bike
 
-    expect(docking_station.dock_bike(bike)).to eq ([bike])
+    expect(docking_station.dock_bike(bike)).to eq (docking_station.bikes)
   end
 
-  it "Lets us see the bikes" do
-    docking_station = DockingStation.new(1)
-    bike = docking_station.release_bike
-    docking_station.dock_bike(bike)
-
-    expect(docking_station.bikes).to eq ([bike])
-
-  end
+  it { is_expected.to respond_to(:bikes)}
 
   it "checks if there are bikes" do
-      docking_station = DockingStation.new(0)
-      expect{docking_station.release_bike}.to raise_error ("There are no bikes available")
+    docking_station = DockingStation.new
+    20.times {docking_station.release_bike}
+    expect{docking_station.release_bike}.to raise_error ("There are no bikes available")
   end
 
-  
+  it 'alerts if the docking station is full' do
+    docking_station = DockingStation.new
+    bike = Bike.new
+    expect{docking_station.dock_bike(bike)}.to raise_error("Docking station full")
+  end
 
 end
