@@ -1,12 +1,10 @@
-require './Lib/DockingStation.rb'
+require 'bike'
 describe Bike do 
   it 'stores bike health' do 
   #Arrange
-    my_bike = Bike.new
+   
   #Act
-    # expect(docking_station.release_bike).to eq "Bike Released"
-    # docking_station.respond_to?release_bike
-    respond_to?(my_bike.working?) 
+  expect(subject).to respond_to(:working?)
   #Assert
   end
 end

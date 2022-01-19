@@ -1,12 +1,20 @@
-require './Lib/DockingStation.rb'
+require 'DockingStation'
 describe DockingStation do 
   it 'stores and releases bikes' do 
   #Arrange
-    docking_station = DockingStation.new
+    
   #Act
-    # expect(docking_station.release_bike).to eq "Bike Released"
-    # docking_station.respond_to?release_bike
-    respond_to?(docking_station.release_bike) 
+   expect(subject).to respond_to(:release_bike)
+   
   #Assert
   end
+
+  it "get's a bike and expects the bike to be working" do
+    docking_station = DockingStation.new
+    bike = docking_station.release_bike
+
+    expect(bike.working?).to eq true
+  end
+
+    
 end
