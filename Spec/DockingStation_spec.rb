@@ -37,4 +37,22 @@ describe DockingStation do
     expect{docking_station.dock_bike(bike)}.to raise_error("Docking station full")
   end
 
+  it "allows user to set capacity" do
+    docking_station = DockingStation.new(50)
+    expect(docking_station.bikes.length).to eq(50)
+  end
+
+  it "checks default capacity" do
+    docking_station = DockingStation.new
+    expect(docking_station.bikes.length).to eq(20)
+  end
+
+  it 'wont release a broken bike' do
+    docking_station = DockingStation.new(1)
+    bike = docking_station.release_bike
+    bike.report_broken
+    docking_station.dock_bike(bike)
+    expect{docking_station.release_bike}.to raise_error("This bike is broken")
+  end
+
 end
