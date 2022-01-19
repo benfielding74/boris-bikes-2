@@ -11,4 +11,9 @@ A Command Line program
 ruby boris_bikes.rb
 
 ```
+## Contributors
+
+Sid Rahman
+Will Diable
+Oliver Cutting
 
