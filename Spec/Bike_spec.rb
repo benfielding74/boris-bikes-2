@@ -4,7 +4,7 @@ describe Bike do
   #Arrange
    
   #Act
-  expect(subject).to respond_to(:working?)
+  expect(subject.working?).to eq(true)
   #Assert
   end
 
