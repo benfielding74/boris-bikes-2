@@ -1,11 +1,7 @@
 require 'bike'
 describe Bike do 
   it 'stores bike health' do 
-  #Arrange
-   
-  #Act
   expect(subject.working?).to eq(true)
-  #Assert
   end
 
   it 'can report a broken bike' do
